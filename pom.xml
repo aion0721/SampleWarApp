@@ -8,6 +8,10 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<properties>
+	    <maven.compiler.source>11</maven.compiler.source>
+	    <maven.compiler.target>11</maven.compiler.target>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
@@ -16,4 +20,17 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version> <!-- このバージョンはJava 18に対応している必要がある -->
+                <configuration>
+                    <source>18</source> <!-- ソースコードのJavaバージョン -->
+                    <target>18</target> <!-- コンパイルされたクラスファイルのJavaバージョン -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
