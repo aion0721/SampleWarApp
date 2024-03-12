@@ -8,7 +8,7 @@ public class HelloWorldServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		try{
-			response.setContentType("text/html/charset=UTF-8");
+			response.setContentType("text/html;charset=UTF-8");
 
 			String name = request.getParameter("name");
 			if(name == null || name.isEmpty()) {
